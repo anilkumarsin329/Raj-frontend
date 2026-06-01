@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* Underline animation for nav-link */
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0%;
+  background: #f59e0b; /* amber-400 */
+  transition: width 220ms ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* small responsive tweak for mobile chat/cta */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite;
+  }
+}
